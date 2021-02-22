@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Box, Typography } from '@material-ui/core'
-import NavigationButton from '../../../common/components/NavigationButton'
+import NavigationButton from '../../common/components/NavigationButton'
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <Box flexGrow={1}>
         <Box m={2}>
           <Typography variant="h3" component="div">
-            hakolab
+            hakoratorio
           </Typography>
         </Box>
       </Box>

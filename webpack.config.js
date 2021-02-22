@@ -3,13 +3,11 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    toppage: './src/toppage/index.js',
-    stamp: './src/stamp/index.js',
-    pianoroll: './src/pianoroll/index.js',
+    index: './src/index.js',
   },
   output: {
-    filename: '[name]/bundle.js',
-    path: path.resolve(__dirname, 'public/build/'),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public/'),
     //publicPath: '/stamp/'
   }, 
   devtool: 'inline-source-map',

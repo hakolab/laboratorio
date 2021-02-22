@@ -5,7 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import PianoRollImage from '../../../static/img/pianoroll-screen-m.png'
+import PianoRollImage from '../../static/img/pianoroll-screen-m.png'
 
 const useStyles = makeStyles({
   root: {
