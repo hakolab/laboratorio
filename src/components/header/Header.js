@@ -8,7 +8,7 @@ const Header = () => {
       <Box flexGrow={1}>
         <Box m={2}>
           <Typography variant="h3" component="div">
-            hakoratorio
+            hakoratory
           </Typography>
         </Box>
       </Box>
