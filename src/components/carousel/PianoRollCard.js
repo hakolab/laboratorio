@@ -1,36 +1,40 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react';
+import { useTheme, useMediaQuery } from '@material-ui/core'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import PianoRollImage from '../../static/img/pianoroll-screen-m.png'
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 570,
-  },
-});
+import PianoRollImage from '../../static/img/pianoroll-screen.png'
 
 export default function PianoRollCard(props) {
-  const classes = useStyles();
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('md'))
+
+  const [imageHeight, setImageHeight] = useState(385)
+  const [style, setStyle] = useState({maxWidth: 500})
+  
+  useEffect(()=>{
+    let imageHeight = matches ? 385 : 193
+    setImageHeight(imageHeight)
+
+    let newStyle = {...style}
+    newStyle.maxWidth = matches ? 567 : 280
+    setStyle(newStyle)
+  },[matches])
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card variant="outlined" style={style}>
       <CardActionArea onClick={props.onClick}>
-        <CardMedia
-          component="img"
-          alt="PianoRoll"
-          height="385"
-          image={PianoRollImage}
-          title="PianoRoll"
-        />
+        <img
+            src={PianoRollImage}
+            alt="pianoroll"
+            height={imageHeight}
+            />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             PianoRoll
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="div">
             In the making.
           </Typography>
         </CardContent>

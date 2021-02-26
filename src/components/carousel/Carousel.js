@@ -6,11 +6,6 @@ import { Box } from '@material-ui/core'
 import StampCard from './StampCard'
 import PianoRollCard from './PianoRollCard'
 
-const test = {
-  height: "50vh",
-  backgroundColor: "grey"
-}
-
 const VirtualizeSwipeableViews = virtualize(SwipeableViews)
 const AutoPlaySwipeableViews = autoPlay(VirtualizeSwipeableViews)
 

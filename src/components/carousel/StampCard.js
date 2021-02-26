@@ -1,39 +1,44 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react';
+import { Box, useTheme, useMediaQuery } from '@material-ui/core'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import StampImage from '../../static/img/stamp-screen-m.png'
-
-const useStyles = makeStyles({
-  root: {
-    width: 500,
-  },
-});
+import StampImage from '../../static/img/stamp-screen.png'
 
 export default function StampCard(props) {
-  const classes = useStyles();
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('md'))
+
+  const [imageHeight, setImageHeight] = useState(385)
+  const [style, setStyle] = useState({maxWidth: 500})
+  
+  useEffect(()=>{
+    let imageHeight = matches ? 385 : 216
+    setImageHeight(imageHeight)
+
+    let newStyle = {...style}
+    newStyle.maxWidth = matches ? 500 : 280
+    setStyle(newStyle)
+  },[matches])
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card variant="outlined" style={style}>
       <CardActionArea onClick={props.onClick}>
-        <CardMedia
-          component="img"
-          alt="Stamp"
-          //width="600"
-          height="385"
-          image={StampImage}
-          title="Stamp"
-        />
+        <img
+            src={StampImage}
+            alt="stamp"
+            height={imageHeight}
+            />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Stamp
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            A tool for drawing pictures by stamping various shapes in the frame.
-          </Typography>
+          <Box width="100%" overflow="wrap">
+            <Typography variant="body2" color="textSecondary" component="div">
+              A tool for drawing pictures by stamping various shapes in the frame.
+            </Typography>
+          </Box>
         </CardContent>
       </CardActionArea>
     </Card>

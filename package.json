@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "netlify": "webpack --mode production --env platform=netlify",
+    "firebase": "webpack --mode production --env platform=firebase",
+    "deploy": "firebase deploy --only hosting:hakoratory",
     "start": "webpack serve --open 'Google Chrome' --mode development"
   },
   "author": "hakodatetaro",
