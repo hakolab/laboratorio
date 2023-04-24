@@ -12,13 +12,13 @@ const AutoPlaySwipeableViews = autoPlay(VirtualizeSwipeableViews)
 const Carousel = () => {
 
   const redirectToStamp = () => {
-    //console.log('redirect to https://stamp.hakodatetaro.com/')
-    window.location.href = "https://stamp.hakodatetaro.com/"
+    //console.log('redirect to https://stamp.hakoratory.com/')
+    window.location.href = "https://stamp.hakoratory.com/"
   }
 
   const redirectToPianoRoll = () => {
-    //console.log('redirect to https://pianoroll.hakodatetaro.com/')
-    window.location.href = "https://pianoroll.hakodatetaro.com/"
+    //console.log('redirect to https://pianoroll.hakoratory.com/')
+    window.location.href = "https://pianoroll.hakoratory.com/"
   }
 
   const slideRenderer = (params) => {

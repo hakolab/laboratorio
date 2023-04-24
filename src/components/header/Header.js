@@ -6,11 +6,11 @@ import LogoImage from '../../static/img/Logo.png'
 const Header = () => {
 
   const redirectToStamp = () => {
-    window.location.href = "https://stamp.hakodatetaro.com/"
+    window.location.href = "https://stamp.hakoratory.com/"
   }
 
   const redirectToPianoRoll = () => {
-    window.location.href = "https://pianoroll.hakodatetaro.com/"
+    window.location.href = "https://pianoroll.hakoratory.com/"
   }
 
 
